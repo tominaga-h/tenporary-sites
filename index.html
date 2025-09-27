@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>カフェ+α 業態調査 インタラクティブレポート</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+		<!-- Chosen Palette: Warm Neutral Harmony -->
+		<!-- Application Structure Plan: 利用者が「カフェ+α」という多様な業態を直感的に理解し、探索できるよう、タブ形式のナビゲーションを主軸としたダッシュボード構造を採用しました。まず全体像を把握できる「概要」セクションを設け、ドーナツチャートで市場のカテゴリ構成を視覚化。その後、「音楽・アート」「趣味・創作」などの具体的なカテゴリに分類し、ユーザーが興味のある分野を深掘りできるように設計。この構造は、膨大な情報を整理し、段階的な情報開示を可能にすることで、ユーザーの認知負荷を軽減し、能動的な発見を促すことを目的としています。各セクションはカード型レイアウトで統一し、情報の比較検討を容易にしています。 -->
+		<!-- Visualization & Content Choices:
+		    - Report Info: 「カフェ+α」業態の多様なカテゴリ。 Goal: 市場の全体像とカテゴリ比率を提示。 Viz/Presentation: ドーナツチャート。 Interaction: ホバーでカテゴリ名と割合を表示。 Justification: 全体を俯瞰し、各カテゴリの存在感を直感的に伝えるのに最適。 Library/Method: Chart.js/Canvas。
+		    - Report Info: 各カテゴリに属する具体的な業態例。 Goal: 各業態の特徴と魅力を具体的に紹介。 Viz/Presentation: アイコン付きカード型レイアウト。 Interaction: なし（情報はカード内に完結）。 Justification: 統一されたフォーマットで情報を整理し、視覚的な比較を容易にするため。各カードは自己完結型の情報ユニットとして機能する。 Library/Method: HTML/CSS/Tailwind。
+		    -->
+		<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+			<style>
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+	background-color: #FDFBF8;
+	color: #4B4B4B;
+}
+.chart-container {
+	position: relative;
+	width: 100%;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40vh;
+	max-height: 400px;
+}
+.nav-button {
+	transition: all 0.3s ease;
+	border-bottom: 2px solid transparent;
+}
+.nav-button.active {
+	border-bottom-color: #C1A38A;
+	color: #A57F60;
+	font-weight: 700;
+}
+.content-section {
+	display: none;
+}
+.content-section.active {
+	display: block;
+}
+.card {
+	background-color: #FFFFFF;
+	border: 1px solid #F0EAE4;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+	</style>
+	</head>
+		<body class="antialiased"> <div class="container mx-auto px-4 py-8 sm:py-12">
+			<header class="text-center mb-10">
+				<h1 class="text-4xl sm:text-5xl font-bold text-[#A57F60] mb-2">カフェ+α 業態調査レポート</h1>
+				<p class="text-lg text-gray-600">趣味・体験・コミュニティと融合する新しいカフェの形</p>
+			</header>
+
+			<nav class="flex justify-center border-b border-gray-200 mb-8 flex-wrap">
+				<button class="nav-button active text-gray-600 py-4 px-6 block hover:text-[#A57F60] focus:outline-none" data-target="overview">概要</button>
+				<button class="nav-button text-gray-600 py-4 px-6 block hover:text-[#A57F60] focus:outline-none" data-target="music-art">音楽・アート系</button>
+				<button class="nav-button text-gray-600 py-4 px-6 block hover:text-[#A57F60] focus:outline-none" data-target="hobby-creation">趣味・創作系</button>
+				<button class="nav-button text-gray-600 py-4 px-6 block hover:text-[#A57F60] focus:outline-none" data-target="entertainment">エンタメ・推し活系</button>
+				<button class="nav-button text-gray-600 py-4 px-6 block hover:text-[#A57F60] focus:outline-none" data-target="learning-work">学び・仕事系</button>
+				<button class="nav-button text-gray-600 py-4 px-6 block hover:text-[#A57F60] focus:outline-none" data-target="new-services">新しいサービス</button>
+			</nav>
+
+			<main>
+				<section id="overview" class="content-section active">
+					<div class="text-center max-w-3xl mx-auto mb-12">
+						<h2 class="text-3xl font-bold text-[#A57F60] mb-4">「カフェ+α」の世界へようこそ</h2>
+						<p class="text-gray-700 leading-relaxed">
+							現代のカフェは、単にコーヒーを飲む場所から、特定の価値や体験を提供する空間へと進化しています。音楽、アート、趣味、エンターテイメントなど、様々な要素と融合することで、顧客に新たな魅力を提供し、独自のコミュニティを形成しています。このセクションでは、「カフェ+α」業態の全体像をカテゴリ別に可視化し、その多様性をご紹介します。
+						</p>
+					</div>
+					<div class="chart-container">
+						<canvas id="categoryChart"></canvas>
+					</div>
+				</section>
+
+				<section id="music-art" class="content-section">
+					<div class="text-center max-w-3xl mx-auto mb-12">
+						<h2 class="text-3xl font-bold text-[#A57F60] mb-4">音楽・アート系</h2>
+						<p class="text-gray-700 leading-relaxed">
+							五感で楽しむ、クリエイティブな空間。音楽やアートをテーマにしたカフェは、ただ鑑賞するだけでなく、その世界観に浸る体験を提供します。こだわりの音響設備やギャラリースペースを備え、訪れる人々にインスピレーションを与えます。
+						</p>
+					</div>
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🎵</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">ジャズ喫茶・ミュージックバー</h3>
+							<p class="text-gray-600">高音質なオーディオシステムで、マスター厳選のレコードやCDを聴きながら過ごす空間。ライブ演奏が行われることもあり、音楽好きの交流の場にもなっています。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🖼️</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">ギャラリーカフェ</h3>
+							<p class="text-gray-600">店内の壁面を展示スペースとして活用し、若手アーティストの作品などを紹介。アートを身近に感じながら、才能ある作家を応援できる場所です。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🎤</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">ライブカフェ</h3>
+							<p class="text-gray-600">小規模なステージを備え、アコースティックライブやオープンマイクイベントなどを開催。演者と観客の距離が近く、一体感のある音楽体験ができます。</p>
+						</div>
+					</div>
+				</section>
+
+				<section id="hobby-creation" class="content-section">
+					<div class="text-center max-w-3xl mx-auto mb-12">
+						<h2 class="text-3xl font-bold text-[#A57F60] mb-4">趣味・創作系</h2>
+						<p class="text-gray-700 leading-relaxed">
+							「好き」が集まり、深まる場所。共通の趣味を持つ人々が集い、情報交換や作品作りを楽しめるカフェです。必要な道具が揃っていたり、ワークショップが開催されたりと、趣味を始めるきっかけや、さらに探求する場を提供します。
+						</p>
+					</div>
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🎲</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">ボードゲームカフェ</h3>
+							<p class="text-gray-600">国内外の様々なボードゲームを取り揃え、初心者から上級者まで楽しめる空間。スタッフがルールを説明してくれるので、気軽に新しいゲームに挑戦できます。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">📚</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">ブックカフェ</h3>
+							<p class="text-gray-600">店主こだわりの選書が楽しめるカフェ。静かな空間で読書に没頭したり、偶然の出会いから新しい一冊を見つけたり。新刊書店や古書店が併設されている場合もあります。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🧶</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">ものづくりカフェ</h3>
+							<p class="text-gray-600">陶芸、編み物、アクセサリー作りなど、様々な創作活動ができるカフェ。道具の貸し出しやワークショップがあり、手ぶらで気軽にものづくりを体験できます。</p>
+						</div>
+					</div>
+				</section>
+
+				<section id="entertainment" class="content-section">
+					<div class="text-center max-w-3xl mx-auto mb-12">
+						<h2 class="text-3xl font-bold text-[#A57F60] mb-4">エンタメ・推し活系</h2>
+						<p class="text-gray-700 leading-relaxed">
+							世界観に浸り、ファンと繋がる聖地。アニメ、漫画、アイドルなど、特定のコンテンツをテーマにしたカフェ。ファン同士が交流し、好きなものを語り合う「推し活」の拠点として人気を集めています。
+						</p>
+					</div>
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">⭐</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">コンセプトカフェ・居酒屋</h3>
+							<p class="text-gray-600">特定のテーマに基づいた内装やメニュー、接客スタイルが特徴。メイドカフェや執事喫茶のほか、近年は「推し」を応援する活動に特化した店舗も増えています。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🤝</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">コラボレーションカフェ</h3>
+							<p class="text-gray-600">アニメやゲーム、キャラクターなどと期間限定で提携。作品をイメージしたオリジナルメニューや限定グッズが楽しめ、ファンにとっては特別な体験の場となります。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🐾</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">動物カフェ</h3>
+							<p class="text-gray-600">猫、犬、フクロウ、ハリネズミなど、様々な動物と触れ合える癒やしの空間。動物好きにはたまらない場所ですが、動物福祉への配慮が重要視されています。</p>
+						</div>
+					</div>
+				</section>
+
+				<section id="learning-work" class="content-section">
+					<div class="text-center max-w-3xl mx-auto mb-12">
+						<h2 class="text-3xl font-bold text-[#A57F60] mb-4">学び・仕事系</h2>
+						<p class="text-gray-700 leading-relaxed">
+							集中と交流が生まれる、サードプレイス。仕事や勉強に集中できる環境を提供するだけでなく、セミナーや勉強会を通じて新たな知識や人脈を得られる場所。現代の多様な働き方や学びのニーズに応えます。
+						</p>
+					</div>
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">💻</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">コワーキングカフェ</h3>
+							<p class="text-gray-600">Wi-Fiや電源を完備し、時間単位で利用できるカフェ。フリーランスやリモートワーカーの仕事場としてだけでなく、異業種交流のハブとしても機能します。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">💬</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">英会話カフェ</h3>
+							<p class="text-gray-600">ネイティブスピーカーのスタッフと気軽に会話を楽しめるカフェ。リラックスした雰囲気の中で、実践的な語学力を身につけることができます。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🧑‍🏫</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">セミナー・ワークショップカフェ</h3>
+							<p class="text-gray-600">プログラミング、デザイン、マーケティングなど、様々なテーマの勉強会やセミナーを定期的に開催。学びたい人が集まり、知識を共有するコミュニティです。</p>
+						</div>
+					</div>
+				</section>
+
+				<section id="new-services" class="content-section">
+					<div class="text-center max-w-3xl mx-auto mb-12">
+						<h2 class="text-3xl font-bold text-[#A57F60] mb-4">新しいサービス形態</h2>
+						<p class="text-gray-700 leading-relaxed">
+							テクノロジーと新しい発想がカフェを変える。従来のカフェの枠を超え、新しいテクノロジーやビジネスモデルを取り入れた形態が登場しています。顧客のライフスタイルに寄り添い、よりパーソナルで便利な体験を提供します。
+						</p>
+					</div>
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🔁</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">サブスクリプション型カフェ</h3>
+							<p class="text-gray-600">月額定額制でコーヒーが飲み放題になるなど、サブスクリプションモデルを導入。日常的に利用する顧客の囲い込みと、安定した収益モデルを両立させます。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🤖</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">無人・省人化カフェ</h3>
+							<p class="text-gray-600">モバイルオーダーやセルフサービス式のマシンを導入し、少ないスタッフまたは無人で運営。深夜や早朝の営業も可能にし、人件費を抑えつつ利便性を高めます。</p>
+						</div>
+						<div class="card rounded-lg p-6 shadow-sm">
+							<span class="text-4xl mb-4 block">🏪</span>
+							<h3 class="font-bold text-xl mb-2 text-[#A57F60]">異業種併設型カフェ</h3>
+							<p class="text-gray-600">コンビニ、書店、アパレルショップ、オフィスなど、既存の業態にカフェ機能をプラス。集客の相乗効果を生み出し、顧客の滞在時間を延ばすことを狙います。</p>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+const navButtons = document.querySelectorAll('.nav-button');
+const contentSections = document.querySelectorAll('.content-section');
+
+navButtons.forEach(button => {
+button.addEventListener('click', () => {
+const targetId = button.dataset.target;
+
+navButtons.forEach(btn => btn.classList.remove('active'));
+button.classList.add('active');
+
+contentSections.forEach(section => {
+if (section.id === targetId) {
+section.classList.add('active');
+} else {
+section.classList.remove('active');
+}
+});
+});
+});
+
+const ctx = document.getElementById('categoryChart').getContext('2d');
+const categoryChart = new Chart(ctx, {
+type: 'doughnut',
+data: {
+labels: [
+'趣味・創作系',
+'音楽・アート系',
+'エンタメ・推し活系',
+'学び・仕事系',
+'新しいサービス'
+],
+datasets: [
+{
+label: '業態カテゴリ比率',
+data: [
+30,
+25,
+20,
+15,
+10
+],
+backgroundColor: [
+'#D1C4E9',
+'#A5D6A7',
+'#FFCC80',
+'#90CAF9',
+'#B0BEC5'
+],
+borderColor: [
+'#B39DDB',
+'#81C784',
+'#FFB74D',
+'#64B5F6',
+'#90A4AE'
+],
+borderWidth: 1,
+hoverOffset: 4
+}
+]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: {
+legend: {
+position: 'bottom',
+labels: {
+padding: 20,
+font: {
+family: "'Noto Sans JP', sans-serif",
+size: 14
+}
+}
+},
+tooltip: {
+callbacks: {
+label: function (context) {
+let label = context.label || '';
+if (label) {
+label += ': ';
+}
+if (context.parsed !== null) {
+label += context.parsed + '%';
+}
+return label;
+}
+}
+}
+}
+}
+});
+});
+		</script>
+	</body>
+</html>
