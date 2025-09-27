@@ -1,306 +1,317 @@
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>みんなが好きな音楽を聞けるカフェ：国内外の事例集</title>
-		<!-- Tailwind CSS CDNの読み込み -->
-		<script src="https://cdn.tailwindcss.com"></script>
-		<style>
-			/* Google Fonts - Inter を使用 */
-			body {
-				font-family: 'Inter', sans-serif;
-				background-color: #f7f7f7;
-				color: #1f2937;
-			}
-			.header-bg {
-				background-color: #3b82f6; /* Blue 500 */
-				background-image: linear-gradient(135deg, #1e3a8a 10%, #3b82f6 100%);
-			}
-			.card {
-				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-				transition: transform 0.3s ease-in-out;
-			}
-			.card:hover {
-				transform: translateY(-5px);
-			}
-			.section-title-border {
-				border-left: 5px solid #ef4444; /* Red 500 */
-				padding-left: 1rem;
-			}
-			/* テーブルのストライプとホバーエフェクト */
-			.case-table tr:nth-child(even) {
-				background-color: #f3f4f6;
-			}
-			.case-table tr:hover {
-				background-color: #e5e7eb;
-			}
-		</style>
-	</head>
-	<body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>みんなが好きな音楽を聞けるカフェ：国内外の事例集</title>
+    <!-- Tailwind CSS CDNの読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Google Fonts - Inter を使用 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f2937;
+        }
+        .header-bg {
+            background-color: #3b82f6; /* Blue 500 */
+            background-image: linear-gradient(135deg, #1e3a8a 10%, #3b82f6 100%);
+        }
+        .card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .section-title-border {
+            border-left: 5px solid #ef4444; /* Red 500 */
+            padding-left: 1rem;
+        }
+        /* テーブルのストライプとホバーエフェクト */
+        .case-table tr:nth-child(even) {
+            background-color: #f3f4f6;
+        }
+        .case-table tr:hover {
+            background-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body>
 
-		<!-- ヘッダーセクション -->
-		<header class="header-bg py-16">
-			<div class="container mx-auto px-4 text-center">
-				<h1 class="text-5xl md:text-6xl font-extrabold text-white mb-2">
-					音楽参加型カフェ事例集
-				</h1>
-				<p class="text-xl text-blue-200 mt-4">
-					「みんなが好きな音楽を聞けるカフェ」国内外の成功事例を徹底分析
-				</p>
-			</div>
-		</header>
+    <!-- ヘッダーセクション -->
+    <header class="header-bg py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-2">
+                音楽参加型カフェ事例集
+            </h1>
+            <p class="text-xl text-blue-200 mt-4">
+                「みんなが好きな音楽を聞けるカフェ」国内外の成功事例を徹底分析
+            </p>
+        </div>
+    </header>
 
-		<main
-			class="container mx-auto px-4 py-12">
+    <main class="container mx-auto px-4 py-12">
 
-			<!-- 導入文 -->
-			<section class="mb-16">
-				<p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
-					店内音楽を主役に据え、来店客が選曲に参加できるカフェやバーは、新しいコミュニティの場として世界中で注目を集めています。ここでは、アナログ体験からデジタル連携まで、多様なスタイルで成功している国内外の事例を紹介します。
-				</p>
-			</section>
+        <!-- 導入文 -->
+        <section class="mb-16">
+            <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
+                店内音楽を主役に据え、来店客が選曲に参加できるカフェやバーは、新しいコミュニティの場として世界中で注目を集めています。ここでは、アナログ体験からデジタル連携まで、多様なスタイルで成功している国内外の事例を紹介します。
+            </p>
+        </section>
 
-			<!-- 1. 国内の事例 -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 section-title-border">
-					1. 国内の事例：音楽鑑賞と交流をテーマに
-				</h2>
+        <!-- 1. 国内の事例 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-title-border">
+                1. 国内の事例：音楽鑑賞と交流をテーマに
+            </h2>
 
-				<!-- 事例カードコンテナ -->
-				<div
-					class="grid md:grid-cols-2 gap-8">
+            <!-- 事例カードコンテナ -->
+            <div class="grid md:grid-cols-2 gap-8">
 
-					<!-- ビルボードカフェ&ダイニング -->
-					<div class="card bg-white p-6 rounded-xl">
-						<h3 class="text-2xl font-semibold text-blue-600 mb-4">ビルボードカフェ&ダイニング（東京・日比谷）</h3>
-						<table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
-							<tbody>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
-									<td class="py-2 px-2">「My tune, My time」。高音質な空間で好きなBGMを選べる。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
-									<td class="py-2 px-2">専用タブレットで「OTORAKU」操作。アナログレコード持ち込み可。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">設備・特色</th>
-									<td class="py-2 px-2">Technics製機器を備えた**完全個室「BOX」**（4室）完備。プロ仕様の音響設備。</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+                <!-- ビルボードカフェ&ダイニング -->
+                <div class="card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">
+                        <a href="https://www.billboard-live.com/cafe/hibiya/" target="_blank" class="hover:underline">ビルボードカフェ&ダイニング（東京・日比谷）</a>
+                    </h3>
+                    <table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
+                        <tbody>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
+                                <td class="py-2 px-2">「My tune, My time」。高音質な空間で好きなBGMを選べる。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
+                                <td class="py-2 px-2">専用タブレットで「OTORAKU」操作。アナログレコード持ち込み可。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">設備・特色</th>
+                                <td class="py-2 px-2">Technics製機器を備えた**完全個室「BOX」**（4室）完備。プロ仕様の音響設備。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-					<!-- レコードカフェ RECOCO -->
-					<div class="card bg-white p-6 rounded-xl">
-						<h3 class="text-2xl font-semibold text-blue-600 mb-4">レコードカフェ RECOCO（東京・渋谷）</h3>
-						<table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
-							<tbody>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
-									<td class="py-2 px-2">「**全席で好きなレコードを自由に聴ける**」レコード試聴カフェ。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
-									<td class="py-2 px-2">各テーブルのプレーヤーで、店内レコード棚（約300枚）から選んで再生。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">運営</th>
-									<td class="py-2 px-2">**チャージ制**（1ドリンク付・時間無制限/混雑時90分制）。若者向けにSNS映えも意識。</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+                <!-- レコードカフェ RECOCO -->
+                <div class="card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">
+                        <a href="https://recoco.cafe/" target="_blank" class="hover:underline">レコードカフェ RECOCO（東京・渋谷）</a>
+                    </h3>
+                    <table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
+                        <tbody>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
+                                <td class="py-2 px-2">「**全席で好きなレコードを自由に聴ける**」レコード試聴カフェ。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
+                                <td class="py-2 px-2">各テーブルのプレーヤーで、店内レコード棚（約300枚）から選んで再生。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">運営</th>
+                                <td class="py-2 px-2">**チャージ制**（1ドリンク付・時間無制限/混雑時90分制）。若者向けにSNS映えも意識。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-					<!-- Mixing -->
-					<div class="card bg-white p-6 rounded-xl">
-						<h3 class="text-2xl font-semibold text-blue-600 mb-4">Mixing（京都・西院）</h3>
-						<table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
-							<tbody>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
-									<td class="py-2 px-2">ゲスト自らレコードに針を落とせる**参加型カフェバー**。交流を促進。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
-									<td class="py-2 px-2">店内奥のターンテーブルとミキサーを自由に操作可能。自分のレコード持ち込みも歓迎。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">特色</th>
-									<td class="py-2 px-2">誰でも“**一日DJ**”になれる体験。リーズナブルな価格設定。</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+                <!-- Mixing -->
+                <div class="card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">
+                        <a href="https://www.instagram.com/mixing_recordbar_kyoto/" target="_blank" class="hover:underline">Mixing（京都・西院）</a>
+                    </h3>
+                    <table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
+                        <tbody>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
+                                <td class="py-2 px-2">ゲスト自らレコードに針を落とせる**参加型カフェバー**。交流を促進。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
+                                <td class="py-2 px-2">店内奥のターンテーブルとミキサーを自由に操作可能。自分のレコード持ち込みも歓迎。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">特色</th>
+                                <td class="py-2 px-2">誰でも“**一日DJ**”になれる体験。リーズナブルな価格設定。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-					<!-- Cafe ON -->
-					<div class="card bg-white p-6 rounded-xl">
-						<h3 class="text-2xl font-semibold text-blue-600 mb-4">Cafe ON（東京・新大久保）</h3>
-						<table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
-							<tbody>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
-									<td class="py-2 px-2">**K-POPファン**のためのファン参加型カフェ。聴ける+観られる。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
-									<td class="py-2 px-2">リクエスト用紙に曲名記入で、その曲のMVが大型モニターで流れる仕組み。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">集客・運営</th>
-									<td class="py-2 px-2">アイドル誕生日イベントなどコミュニティ形成を意識。SNS映え空間。</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</section>
+                <!-- Cafe ON -->
+                <div class="card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">
+                        <a href="https://cafe-on.jp/" target="_blank" class="hover:underline">Cafe ON（東京・新大久保）</a>
+                    </h3>
+                    <table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
+                        <tbody>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
+                                <td class="py-2 px-2">**K-POPファン**のためのファン参加型カフェ。聴ける+観られる。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
+                                <td class="py-2 px-2">リクエスト用紙に曲名記入で、その曲のMVが大型モニターで流れる仕組み。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">集客・運営</th>
+                                <td class="py-2 px-2">アイドル誕生日イベントなどコミュニティ形成を意識。SNS映え空間。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-			<!-- 2. 海外の事例 -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 section-title-border">
-					2. 海外の事例：食・社交との融合とデジタル連携
-				</h2>
+        <!-- 2. 海外の事例 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-title-border">
+                2. 海外の事例：食・社交との融合とデジタル連携
+            </h2>
 
-				<div
-					class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8">
 
-					<!-- Tokyo Record Bar -->
-					<div class="card bg-white p-6 rounded-xl">
-						<h3 class="text-2xl font-semibold text-red-600 mb-4">Tokyo Record Bar（米国・ニューヨーク）</h3>
-						<table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
-							<tbody>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
-									<td class="py-2 px-2">予約制イザカヤ+リスニングバー。**食と音楽の融合**。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
-									<td class="py-2 px-2">ゲストは入店前に**好きなレコード曲を1曲リクエスト**。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">運営・価格</th>
-									<td class="py-2 px-2">1人あたり\$75のプリフィクスコース（約¥11,000）と音楽代を含む。</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+                <!-- Tokyo Record Bar -->
+                <div class="card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4">
+                        <a href="https://www.tokyorecordbar.com/" target="_blank" class="hover:underline">Tokyo Record Bar（米国・ニューヨーク）</a>
+                    </h3>
+                    <table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
+                        <tbody>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
+                                <td class="py-2 px-2">予約制イザカヤ+リスニングバー。**食と音楽の融合**。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
+                                <td class="py-2 px-2">ゲストは入店前に**好きなレコード曲を1曲リクエスト**。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">運営・価格</th>
+                                <td class="py-2 px-2">1人あたり\$75のプリフィクスコース（約¥11,000）と音楽代を含む。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-					<!-- Bar Orai -->
-					<div class="card bg-white p-6 rounded-xl">
-						<h3 class="text-2xl font-semibold text-red-600 mb-4">Bar Orai（米国・ニューヨーク）</h3>
-						<table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
-							<tbody>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
-									<td class="py-2 px-2">日本のリスニングバー文化を反映。**一般客参加型のDJブース開放**。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
-									<td class="py-2 px-2">希望者は自前のレコードを持参し、**1時間DJ**できる公開オーディション制度。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">特色</th>
-									<td class="py-2 px-2">「お客が主役の夜」を作れるバー。高品質な音響設備。</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+                <!-- Bar Orai -->
+                <div class="card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4">
+                        <a href="https://www.barorai.com/" target="_blank" class="hover:underline">Bar Orai（米国・ニューヨーク）</a>
+                    </h3>
+                    <table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
+                        <tbody>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
+                                <td class="py-2 px-2">日本のリスニングバー文化を反映。**一般客参加型のDJブース開放**。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
+                                <td class="py-2 px-2">希望者は自前のレコードを持参し、**1時間DJ**できる公開オーディション制度。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">特色</th>
+                                <td class="py-2 px-2">「お客が主役の夜」を作れるバー。高品質な音響設備。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-					<!-- Slow Boat -->
-					<div class="card bg-white p-6 rounded-xl">
-						<h3 class="text-2xl font-semibold text-red-600 mb-4">Slow Boat（シンガポール）</h3>
-						<table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
-							<tbody>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
-									<td class="py-2 px-2">シンガポール初のバイナル・リスニングカフェ。日本の「ジャズ喫茶」にインスパイア。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
-									<td class="py-2 px-2">1人S\$30/1時間（ドリンク込）で**好きなレコードを自由に選んで再生**できる時間制。</td>
-								</tr>
-								<tr>
-									<th class="py-2 px-2 font-medium bg-gray-50 w-1/4">特色</th>
-									<td class="py-2 px-2">**音楽鑑賞が主目的**。会話は控えめで音に身を委ねる贅沢な体験を提供。</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</section>
+                <!-- Slow Boat -->
+                <div class="card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4">
+                        <a href="https://www.slowboat.sg/" target="_blank" class="hover:underline">Slow Boat（シンガポール）</a>
+                    </h3>
+                    <table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
+                        <tbody>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 rounded-tl-lg w-1/4">コンセプト</th>
+                                <td class="py-2 px-2">シンガポール初のバイナル・リスニングカフェ。日本の「ジャズ喫茶」にインスパイア。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">選曲システム</th>
+                                <td class="py-2 px-2">1人S\$30/1時間（ドリンク込）で**好きなレコードを自由に選んで再生**できる時間制。</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2 px-2 font-medium bg-gray-50 w-1/4">特色</th>
+                                <td class="py-2 px-2">**音楽鑑賞が主目的**。会話は控えめで音に身を委ねる贅沢な体験を提供。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-			<!-- 3. スマホアプリ連動の音楽参加型店舗（海外事例） -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 section-title-border">
-					3. スマホアプリ連動の音楽参加型店舗（海外事例）
-				</h2>
+        <!-- 3. スマホアプリ連動の音楽参加型店舗（海外事例） -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-title-border">
+                3. スマホアプリ連動の音楽参加型店舗（海外事例）
+            </h2>
 
-				<div class="card bg-white p-6 rounded-xl">
-					<table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
-						<thead>
-							<tr class="bg-gray-100">
-								<th class="py-3 px-4 text-lg font-semibold w-1/3">サービス名</th>
-								<th class="py-3 px-4 text-lg font-semibold w-2/3">主な特色と効果</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="py-3 px-4 font-medium text-lg text-blue-800">Rockbot（米国発）</td>
-								<td class="py-3 px-4">来店客がスマホアプリで好きな曲に**投票・リクエスト**できるジュークボックス型システム。客同士の競争や滞在時間延長効果あり。</td>
-							</tr>
-							<tr>
-								<td class="py-3 px-4 font-medium text-lg text-blue-800">crowdDJ（豪州発）</td>
-								<td class="py-3 px-4">**Spotifyアカウントと連携**。ユーザーのお気に入り曲を店舗プレイリストに反映。気に入ったらその場でフォローできる仕組み。</td>
-							</tr>
-							<tr>
-								<td class="py-3 px-4 font-medium text-lg text-blue-800">共通技術</td>
-								<td class="py-3 px-4">店舗側に専用端末を設置し、インターネット経由でリクエストを受信。店側はライブラリや選曲ルールを設定し、雰囲気をコントロール。</td>
-							</tr>
-						</tbody>
-					</table>
-					<p class="mt-4 text-sm text-gray-500">
-						※ 日本国内の類似サービスとして「OTORAKU」などが存在します。
-					</p>
-				</div>
-			</section>
+            <div class="card bg-white p-6 rounded-xl">
+                <table class="w-full text-sm text-left text-gray-700 border-collapse case-table">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="py-3 px-4 text-lg font-semibold w-1/3">サービス名</th>
+                            <th class="py-3 px-4 text-lg font-semibold w-2/3">主な特色と効果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-lg text-blue-800">Rockbot（米国発）</td>
+                            <td class="py-3 px-4">来店客がスマホアプリで好きな曲に**投票・リクエスト**できるジュークボックス型システム。客同士の競争や滞在時間延長効果あり。</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-lg text-blue-800">crowdDJ（豪州発）</td>
+                            <td class="py-3 px-4">**Spotifyアカウントと連携**。ユーザーのお気に入り曲を店舗プレイリストに反映。気に入ったらその場でフォローできる仕組み。</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-lg text-blue-800">共通技術</td>
+                            <td class="py-3 px-4">店舗側に専用端末を設置し、インターネット経由でリクエストを受信。店側はライブラリや選曲ルールを設定し、雰囲気をコントロール。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-4 text-sm text-gray-500">
+                    ※ 日本国内の類似サービスとして「OTORAKU」などが存在します。
+                </p>
+            </div>
+        </section>
 
-			<!-- まとめ -->
-			<section class="pt-8">
-				<h2 class="text-3xl font-bold mb-8 section-title-border">
-					まとめ：成功の鍵
-				</h2>
-				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-					<div class="bg-yellow-100 p-6 rounded-xl card border-b-4 border-yellow-500">
-						<p class="text-xl font-bold text-yellow-800">アナログ体験</p>
-						<p class="text-sm mt-2 text-yellow-700">レコードを自分で選んで針を落とす「操作の楽しさ」</p>
-					</div>
-					<div class="bg-green-100 p-6 rounded-xl card border-b-4 border-green-500">
-						<p class="text-xl font-bold text-green-800">高品質な音響</p>
-						<p class="text-sm mt-2 text-green-700">プロ仕様の設備で音楽を「主役」として扱う</p>
-					</div>
-					<div class="bg-purple-100 p-6 rounded-xl card border-b-4 border-purple-500">
-						<p class="text-xl font-bold text-purple-800">デジタル連携</p>
-						<p class="text-sm mt-2 text-purple-700">スマホアプリ活用による手軽なリクエスト</p>
-					</div>
-					<div class="bg-pink-100 p-6 rounded-xl card border-b-4 border-pink-500">
-						<p class="text-xl font-bold text-pink-800">コミュニティ形成</p>
-						<p class="text-sm mt-2 text-pink-700">交流や「推し活」など、音楽を介した体験</p>
-					</div>
-				</div>
-				<p class="mt-8 text-center text-lg font-medium text-gray-700">
-					BGMをただ流すのではなく、お客も巻き込んだ音楽体験を提供することが、新たな差別化とファンの心を掴む鍵となっています。
-				</p>
-			</section>
-		</main>
+        <!-- まとめ -->
+        <section class="pt-8">
+            <h2 class="text-3xl font-bold mb-8 section-title-border">
+                まとめ：成功の鍵
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="bg-yellow-100 p-6 rounded-xl card border-b-4 border-yellow-500">
+                    <p class="text-xl font-bold text-yellow-800">アナログ体験</p>
+                    <p class="text-sm mt-2 text-yellow-700">レコードを自分で選んで針を落とす「操作の楽しさ」</p>
+                </div>
+                <div class="bg-green-100 p-6 rounded-xl card border-b-4 border-green-500">
+                    <p class="text-xl font-bold text-green-800">高品質な音響</p>
+                    <p class="text-sm mt-2 text-green-700">プロ仕様の設備で音楽を「主役」として扱う</p>
+                </div>
+                <div class="bg-purple-100 p-6 rounded-xl card border-b-4 border-purple-500">
+                    <p class="text-xl font-bold text-purple-800">デジタル連携</p>
+                    <p class="text-sm mt-2 text-purple-700">スマホアプリ活用による手軽なリクエスト</p>
+                </div>
+                <div class="bg-pink-100 p-6 rounded-xl card border-b-4 border-pink-500">
+                    <p class="text-xl font-bold text-pink-800">コミュニティ形成</p>
+                    <p class="text-sm mt-2 text-pink-700">交流や「推し活」など、音楽を介した体験</p>
+                </div>
+            </div>
+            <p class="mt-8 text-center text-lg font-medium text-gray-700">
+                BGMをただ流すのではなく、お客も巻き込んだ音楽体験を提供することが、新たな差別化とファンの心を掴む鍵となっています。
+            </p>
+        </section>
+    </main>
 
-		<!-- フッター -->
-		<footer class="header-bg text-white py-6 mt-12">
-			<div class="container mx-auto px-4 text-center text-sm">
-				&copy; 2025 音楽参加型カフェ事例集
-			</div>
-		</footer>
+    <!-- フッター -->
+    <footer class="header-bg text-white py-6 mt-12">
+        <div class="container mx-auto px-4 text-center text-sm">
+            &copy; 2025 音楽参加型カフェ事例集
+        </div>
+    </footer>
 
-	</body>
+</body>
 </html>
